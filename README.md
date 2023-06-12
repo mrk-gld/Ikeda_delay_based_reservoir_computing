@@ -58,4 +58,4 @@ The code runs the simulation and save a file called "delay_rc_output.csv" that c
 
 ## Reproduce paper results 
 
-To reproduce the results for the Mackey-Glass p=17 steps ahead prediction shown in Fig. 3.a) one can run the run_simulations.sh and will receive the performance for the three studied parameter settings: (b=0.0,$gamma$=2) blue, (b=0.5,$gamma$=0.5) green, (b=1.5,$gamma$=1.5) red. As a remark, for ease of use in this script, no iteration over several mask seeds is used whereas in the paper the performance is averaged over 10 different random seeds for the mask.
+To reproduce the results for the Mackey-Glass p=17 steps ahead prediction shown in Fig. 3.a) one can run the run_simulations.sh and will receive the performance for the three studied parameter settings: (b=0.0,$\gamma$=2) blue, (b=0.5,$\gamma$=0.5) green, (b=1.5,$\gamma$=1.5) red. As a remark, for ease of use in this script, no iteration over several mask seeds is used whereas in the paper the performance is averaged over 10 different random seeds for the mask.
