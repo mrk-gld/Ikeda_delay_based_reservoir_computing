@@ -34,18 +34,17 @@ You can set the parameters of the model by passing command line arguments to the
 
 # Model specific parameters
 The Ikeda model is given by the following equation:
-$$ \dot{x}(t) = -x(t) +\beta\sin^2(x(t-\tau) + \gamma u(t) + \phi) + A\chi(t) $$
+$$ \dot{x}(t) = -x(t) +\beta\sin^2(x(t-\tau) + \gamma u(t) + b) + A\chi(t) $$
 The parameters can be changed via:
-- $$\gamma$$    →   `-gamma=`
-- $$\phi$$      →   `-phi=`
-- $$\gamma$$    →   `-gamma=`
-- $$A$$         →   `-noise_amp`
+- $\gamma$    →   `-gamma=`
+- $b$      →   `-phi=`
+- $\gamma$    →   `-gamma=`
+- $A$         →   `-noise_amp`
 
 ## What the code does
 
 - Loads input data from a CSV file named `mackey_glass_tau17.csv` and normalizes it. (Replace this file with your own input data file to change task.)
 - Splits the data into training and testing sets.
-- Selects a delay-based reservoir model (Lang-Kobayashi).
 - Sets reservoir parameters based on command-line arguments.
 - Initializes and runs the reservoir with the input data.
 - Trains the output layer using the training data.
@@ -55,3 +54,8 @@ The parameters can be changed via:
 
 ## Output
 The code runs the simulation and save a file called "delay_rc_output.csv" that contains the model and reservoir parameter such as the training and testing performance. Additionally, the code generates two output files: `y_pred.csv` and `y_test.csv`. These files contain the predicted and actual output values, respectively.
+
+
+## Reproduce paper results 
+
+To reproduce the results for the Mackey-Glass p=17 steps ahead prediction shown in Fig. 3.a) one can run the run_simulations.sh and will receive the performance for the three studied parameter settings: (b=0.0,$gamma$=2) blue, (b=0.5,$gamma$=0.5) green, (b=1.5,$gamma$=1.5) red. As a remark, for ease of use in this script, no iteration over several mask seeds is used whereas in the paper the performance is averaged over 10 different random seeds for the mask.
