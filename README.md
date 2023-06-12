@@ -38,8 +38,8 @@ $$ \dot{x}(t) = -x(t) +\beta\sin^2(x(t-\tau) + \gamma u(t) + b) + A\chi(t) $$
 The parameters can be changed via:
 - $\gamma$    →   `-gamma=`
 - $b$      →   `-phi=`
-- $\gamma$    →   `-gamma=`
-- $A$         →   `-noise_amp`
+- $\beta$    →   `-beta=`
+- $A$         →   `-noise_amp=`
 
 ## What the code does
 
